@@ -1,0 +1,9 @@
+[package]
+name = "version_name_generator"
+version = "0.1.0"
+edition = "2021"
+authors = "James Musselman <jtmuss@pm.me>"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
