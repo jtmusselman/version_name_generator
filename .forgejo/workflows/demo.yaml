@@ -1,6 +1,30 @@
-on: [push]
+name: Build and Publish Rust Binary
+
+on:
+  push:
+    tags:
+      - '*'
+
 jobs:
-  test:
-    runs-on: docker
+  build:
+
+    runs-on: ubuntu-latest
+
     steps:
-      - run: echo All Good
+    - name: Set up Rust
+      uses: actions/setup-rust@v1
+      with:
+        rust-version: stable
+
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Build binary
+      run: cargo build --release
+
+    - name: Publish binary
+      uses: actions/upload-artifact@v2
+      with:
+        name: version_name_generator
+        path: ./target/release/version_name_generator
+
