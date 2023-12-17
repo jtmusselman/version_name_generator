@@ -18,4 +18,4 @@ jobs:
       with:
         fail_on_unmatched_files: true
         files: | 
-          ${{github.workspace}}/target/build/version_name_generator
+          ./version_name_generator
