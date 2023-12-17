@@ -3,8 +3,8 @@ on: [push]
 jobs:
   build:
     runs-on: docker
-        container:
-          image: rust:1-alpine
+    container:
+      image: rust:1-alpine
     steps:
     - name: Check out code
       uses: actions/checkout@v4
