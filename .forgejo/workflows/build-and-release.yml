@@ -11,7 +11,9 @@ jobs:
     - name: Build binary
       run: cargo build --release
     - name: Publish binary
-      uses: actions/upload-artifact@v3
+      uses: https://code.forgejo.org/forgejo/forgejo-build-publish/build@v1
       with:
         name: version_name_generator
-        path: /workspace/musselman/version_name_generator/target/release/version_name_generator
+        platforms: linux/amd64,linux/arm64
+        binary-name: version_name_generator
+        binary-path: /workspace/musselman/version_name_generator/target/release/version_name_generator
