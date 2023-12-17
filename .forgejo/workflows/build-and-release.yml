@@ -14,4 +14,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: version_name_generator
-        path: artifacts/version_name_generator
+        path: ./version_name_generator
