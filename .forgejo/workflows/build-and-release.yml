@@ -16,5 +16,6 @@ jobs:
       uses: earl-warren/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
+        fail_on_unmatched_files: true
         files: | 
-          version_name_generator
+          ${{github.workspace}}/target/build/version_name_generator
