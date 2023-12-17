@@ -18,4 +18,5 @@ jobs:
       with:
         fail_on_unmatched_files: true
         files: | 
-          ./version_name_generator
+          ./*
+
