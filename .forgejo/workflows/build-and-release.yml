@@ -5,11 +5,9 @@ jobs:
     runs-on: docker
     steps:
     - name: Set up Rust
-      uses: actions/setup-rust@v1
-      with:
-        rust-version: stable
+      uses: dtolnay/rust-toolchain@stable
     - name: Check out code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Build binary
       run: cargo build --release
     - name: Publish binary
