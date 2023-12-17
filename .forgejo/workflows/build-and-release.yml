@@ -11,7 +11,7 @@ jobs:
     - name: Build binary
       run: cargo build --release
     - name: Publish binary
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: version_name_generator
-        path: ./target/release/version_name_generator
+        path: artifacts/version_name_generator
