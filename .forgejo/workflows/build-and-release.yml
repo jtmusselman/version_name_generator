@@ -10,12 +10,10 @@ jobs:
       uses: actions/checkout@v4
     - name: Build binary
       run: cargo build --release
-    - name: Change directory to build directory
-      run: cd /workspace/musselman/version_name_generator/target/release && ls
     - uses: actions/upload-artifact@v3
       with:
         name: version_name_generator
-        path: version_name_generator
+        path: ./target/release/version_name_generator
     - uses: actions/download-artifact@v3
       with:
         name: version_name_generator
