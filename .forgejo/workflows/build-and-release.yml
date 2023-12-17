@@ -11,7 +11,7 @@ jobs:
     - name: Build binary
       run: cargo build --release
     - name: Publish binary
-      uses: softprops/action-gh-release@v1
+      uses: earl-warren/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
       with:
         files: /workspace/musselman/version_name_generator/target/release/version_name_generator
