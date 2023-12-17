@@ -3,9 +3,9 @@ on: [push]
 jobs:
   build:
     runs-on: docker
-    container:
-      image: rust:latest
     steps:
+    - name: Set up Rust
+      uses: msrd0/rust-toolchain@nightly
     - name: Check out code
       uses: actions/checkout@v4
     - name: Build binary
