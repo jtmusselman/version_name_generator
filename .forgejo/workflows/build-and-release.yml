@@ -14,4 +14,4 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: version_name_generator
-        path: /workspace/musselman/version_name_generator
+        path: /workspace/musselman/version_name_generator/target/release/version_name_generator
