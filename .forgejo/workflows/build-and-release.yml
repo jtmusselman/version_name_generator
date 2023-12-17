@@ -10,8 +10,8 @@ jobs:
       uses: actions/checkout@v4
     - name: Build binary
       run: cargo build --release
-    - name: Test location
-      run: ls /workspace/musselman/version_name_generator/target/release
+    - name: Change directory to build directory
+      run: cd /workspace/musselman/version_name_generator/target/release
     - name: Publish binary
       uses: earl-warren/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
