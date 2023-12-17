@@ -5,7 +5,7 @@ jobs:
     runs-on: docker
     steps:
     - name: Set up Rust
-      uses: dtolnay/rust-toolchain@stable
+      uses: msrd0/rust-toolchain@master
     - name: Check out code
       uses: actions/checkout@v4
     - name: Build binary
