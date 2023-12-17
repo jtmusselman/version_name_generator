@@ -1,8 +1,5 @@
 name: Build and Publish Rust Binary
-on:
-  push:
-    tags:
-      - '*'
+on: [push]
 jobs:
   build:
     runs-on: docker
