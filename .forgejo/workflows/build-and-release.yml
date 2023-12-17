@@ -14,11 +14,11 @@ jobs:
       run: cd /workspace/musselman/version_name_generator/target/release && ls
     - uses: actions/upload-artifact@v3
       with:
-      name: version_name_generator
-      path: version_name_generator
+        name: version_name_generator
+        path: version_name_generator
     - uses: actions/download-artifact@v3
       with:
-      name: version_name_generator
+        name: version_name_generator
     - name: Publish binary
       uses: earl-warren/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
