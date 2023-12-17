@@ -23,5 +23,5 @@ jobs:
       with:
         fail_on_unmatched_files: true
         files: | 
-          ./target/release/version_name_generator
+          version_name_generator.zip
 
