@@ -11,9 +11,7 @@ jobs:
     - name: Build binary
       run: cargo build --release
     - name: Publish binary
-      uses: https://code.forgejo.org/forgejo/forgejo-build-publish/build@v1
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
       with:
-        name: version_name_generator
-        platforms: linux/amd64,linux/arm64
-        binary-name: version_name_generator
-        binary-path: /workspace/musselman/version_name_generator/target/release/version_name_generator
+        files: /workspace/musselman/version_name_generator/target/release/version_name_generator
