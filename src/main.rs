@@ -1,3 +1,7 @@
+// James Musselman
+// Released under AGPL-v3.0-or-later
+// This program generates a version name using a random alliterative animal and adjective from their respective files.
+
 use std::fs::File;
 use std::io::{self, BufRead};
 use inflector::Inflector;
@@ -30,6 +34,7 @@ fn main() -> io::Result<()> {
 
     let mut rng = thread_rng();
 
+
     loop {
         // Generate random lines
         let animal = animal_lines.choose(&mut rng).unwrap();
@@ -38,8 +43,25 @@ fn main() -> io::Result<()> {
         // Check if the first character of adjective and animal match
         if animal.chars().next() == adjective.chars().next() {
             // Print the matched version name
-            println!("Your new Version Name:\n{} {}", adjective, animal);
-            break;
+            println!("\n{} {}\n", adjective, animal);
+            
+            println!("Are you satisfied? (y/n)");
+    
+            let mut input = String::new();
+            io::stdin().read_line(&mut input).expect("Failed to read line");
+    
+            // Trim leading/trailing whitespaces
+            let input = input.trim();
+    
+            if input.eq_ignore_ascii_case("y") {
+                break;
+            } else if input.eq_ignore_ascii_case("n") {
+                println!("Generating new output...")
+            
+            } else {
+                println!("Invalid input. Please enter 'y' or 'n'.");
+                continue;
+            }
         }
     }
 
