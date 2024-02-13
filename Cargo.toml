@@ -7,3 +7,5 @@ authors = ["James Musselman <jtmuss@pm.me>"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+rand = "0.8.4"
+Inflector = "*"
